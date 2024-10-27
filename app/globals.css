@@ -19,3 +19,136 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* src/styles/Card.css */
+
+/* Estilo base de la tarjeta */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover en la tarjeta */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el encabezado */
+.card h2 {
+  color: #333333;
+  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Estilo para el texto del cuerpo */
+.card p {
+  color: #666666;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Variante oscura (puedes agregar una clase adicional .card-dark) */
+.card.card-dark {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.card.card-dark h2 {
+  color: #ffffff;
+  border-bottom-color: #34495e;
+}
+
+.card.card-dark p {
+  color: #ecf0f1;
+}
+
+/* Variante con borde de color */
+.card.card-bordered {
+  border-left: 4px solid #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+    margin: 12px 0;
+  }
+
+  .card h2 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación al cargar */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardFadeIn 0.3s ease-out forwards;
+}
+
+/* Estilos adicionales para diferentes estados */
+.card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.card.error {
+  border-color: #e74c3c;
+  background-color: #fff5f5;
+}
+
+.card.success {
+  border-color: #2ecc71;
+  background-color: #f0fff4;
+}
+
+/* Estilo para cards en grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo para contenido multimedia dentro de la card */
+.card img,
+.card video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* Estilo para enlaces dentro de la card */
+.card a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
